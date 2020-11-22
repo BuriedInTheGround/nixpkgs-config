@@ -41,6 +41,9 @@
     # Social
     ./social/signal.nix
     ./social/telegram.nix
+
+    # Vim
+    ./vim/neovim.nix
   ];
 
   # This value determines the Home Manager release that your
