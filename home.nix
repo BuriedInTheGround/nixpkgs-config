@@ -25,6 +25,9 @@
     ./misc/sass.nix
     ./misc/stui.nix
 
+    # Security
+    ./security/bitwarden.nix
+
     # Shell
     ./shell/alacritty.nix
     ./shell/zsh.nix
