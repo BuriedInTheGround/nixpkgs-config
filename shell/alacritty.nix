@@ -9,7 +9,7 @@
         title = "Alacritty";
         dynamic_title = true;
       };
-      background_opacity = 0.96;
+      background_opacity = 0.92;
       font = {
         normal = {
           family = "monospace";

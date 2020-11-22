@@ -10,7 +10,7 @@
       clock-show-weekday = false;
       cursor-theme = "Paper";
       enable-hot-corners = true;
-      gtk-theme = "Arc-Darker";
+      gtk-theme = "Arc-Dark";
       icon-theme = "Papirus-Dark";
       locate-pointer = true;
       show-battery-percentage = true;
@@ -60,12 +60,12 @@
     "org/gnome/shell" = {
       app-picker-view = 1;
       enabled-extensions = ["dash-to-panel@jderose9.github.com" "arc-menu@linxgem33.com" "drive-menu@gnome-shell-extensions.gcampax.github.com"];
-      favorite-apps=["org.gnome.Nautilus.desktop" "firefox.desktop" "spotify.desktop" "chromium-browser.desktop" "Alacritty.desktop" "code.desktop"];
+      favorite-apps=["org.gnome.Nautilus.desktop" "firefox.desktop" "spotify.desktop" "Alacritty.desktop" "code.desktop"];
     };
 
     "org/gnome/shell/extensions/arc-menu" = {
       avatar-style = "Circular";
-      custom-menu-button-icon-size = 40.0;
+      custom-menu-button-icon-size = 32.0;
       disable-activities-hotcorner = false;
       disable-hotkey-onkeyrelease = false;
       enable-custom-arc-menu = false;
