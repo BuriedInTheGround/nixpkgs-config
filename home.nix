@@ -6,10 +6,12 @@
 
   imports = [
     ./direnv.nix
+    ./fontconfig.nix
     ./git.nix
 
     # Crypto
     ./crypto/age.nix
+    ./crypto/mkcert.nix
 
     # GUI Tools
     ./gui-tools/dconf.nix
@@ -29,6 +31,7 @@
 
     # Shell Tools
     ./shell-tools/bat.nix
+    ./shell-tools/bc.nix
     ./shell-tools/fd.nix
     ./shell-tools/htop.nix
 
