@@ -5,7 +5,7 @@
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
-      clock-show-date = false;
+      clock-show-date = true;
       clock-show-seconds = false;
       clock-show-weekday = false;
       cursor-theme = "Paper";

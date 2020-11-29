@@ -25,6 +25,10 @@
     ./misc/sass.nix
     ./misc/stui.nix
 
+    # Office
+    ./office/standardnotes.nix
+    ./office/zoom.nix
+
     # Security
     ./security/bitwarden.nix
 
