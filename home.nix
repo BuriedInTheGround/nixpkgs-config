@@ -13,6 +13,9 @@
     ./crypto/age.nix
     ./crypto/mkcert.nix
 
+    # Develop
+    ./develop/go.nix
+
     # GUI Tools
     ./gui-tools/dconf.nix
     ./gui-tools/marktext.nix
