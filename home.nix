@@ -36,6 +36,7 @@
     ./shell-tools/bat.nix
     ./shell-tools/bc.nix
     ./shell-tools/fd.nix
+    ./shell-tools/fzf.nix
     ./shell-tools/htop.nix
 
     # Social
