@@ -4,7 +4,7 @@
   programs.git = {
     enable = true;
     package = pkgs.gitAndTools.gitFull;
-    userName = "BuriedInTheGround";
+    userName = "Simone Ragusa";
     userEmail = "simone99.as@gmail.com";
     aliases = {
       co = "commit";
