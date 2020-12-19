@@ -18,11 +18,13 @@
 
     # GUI Tools
     ./gui-tools/dconf.nix
-    ./gui-tools/marktext.nix
     ./gui-tools/spotify.nix
     ./gui-tools/themes.nix
+    ./gui-tools/typora.nix
+    ./gui-tools/wine.nix
 
     # Misc
+    ./misc/cava.nix
     ./misc/httpie.nix
     ./misc/pastel.nix
     ./misc/sass.nix
