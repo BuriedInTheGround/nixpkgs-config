@@ -47,8 +47,10 @@
     ./shell-tools/fd.nix
     ./shell-tools/fzf.nix
     ./shell-tools/htop.nix
+    ./shell-tools/ytdl.nix
 
     # Social
+    ./social/discord.nix
     ./social/signal.nix
     ./social/telegram.nix
 
