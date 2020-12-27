@@ -2,8 +2,8 @@
 
 {
   fonts.fontconfig.enable = true;
-  home.file."fonts.conf" = {
+  xdg.configFile."fonts.conf" = {
     source = ./fonts.conf;
-    target = "./.config/fontconfig/fonts.conf";
+    target = "fontconfig/fonts.conf";
   };
 }

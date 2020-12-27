@@ -17,7 +17,7 @@
     ./develop/go.nix
 
     # GUI Tools
-    ./gui-tools/dconf.nix
+    ./gui-tools/gnome-packages.nix
     ./gui-tools/spotify.nix
     ./gui-tools/themes.nix
     ./gui-tools/typora.nix
@@ -29,6 +29,7 @@
     ./misc/pastel.nix
     ./misc/sass.nix
     ./misc/stui.nix
+    ./misc/zscroll.nix
 
     # Office
     ./office/standardnotes.nix
@@ -56,6 +57,11 @@
 
     # Vim
     ./vim/neovim.nix
+
+    # WM
+    ./wm/bspwm.nix
+    ./wm/polybar.nix
+    ./wm/sxhkd.nix
   ];
 
   # This value determines the Home Manager release that your
