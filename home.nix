@@ -24,14 +24,6 @@
     ./gui-tools/typora.nix
     ./gui-tools/wine.nix
 
-    # Misc
-    ./misc/cava.nix
-    ./misc/httpie.nix
-    ./misc/pastel.nix
-    ./misc/sass.nix
-    ./misc/stui.nix
-    ./misc/zscroll.nix
-
     # Office
     ./office/standardnotes.nix
     ./office/zoom.nix
@@ -44,18 +36,26 @@
     ./shell/dircolors.nix
     ./shell/zsh.nix
 
-    # Shell Tools
-    ./shell-tools/bat.nix
-    ./shell-tools/bc.nix
-    ./shell-tools/fd.nix
-    ./shell-tools/fzf.nix
-    ./shell-tools/htop.nix
-    ./shell-tools/ytdl.nix
-
     # Social
     ./social/discord.nix
     ./social/signal.nix
     ./social/telegram.nix
+
+    # Tools
+    ./tools/bat.nix
+    ./tools/bc.nix
+    ./tools/cava.nix
+    ./tools/fd.nix
+    ./tools/fzf.nix
+    ./tools/htop.nix
+    ./tools/httpie.nix
+    ./tools/latex.nix
+    ./tools/pastel.nix
+    ./tools/sass.nix
+    ./tools/stui.nix
+    ./tools/xev.nix
+    ./tools/ytdl.nix
+    ./tools/zscroll.nix
 
     # Vim
     ./vim/neovim.nix

@@ -2,6 +2,7 @@
 
 {
   home.packages = [
-    pkgs.bat
+    pkgs.tectonic
+    pkgs.raleway
   ];
 }
