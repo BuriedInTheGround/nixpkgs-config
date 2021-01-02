@@ -7,13 +7,13 @@
   imports = [
     ./direnv.nix
     ./fontconfig.nix
-    ./git.nix
 
     # Crypto
     ./crypto/age.nix
     ./crypto/mkcert.nix
 
     # Develop
+    ./develop/git.nix
     ./develop/go.nix
 
     # GUI Tools
