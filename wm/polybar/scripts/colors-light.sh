@@ -3,9 +3,9 @@
 ## Author : Aditya Shakya
 ## Github : adi1090x
 
-PDIR="$HOME/.config/polybar"
+PDIR="$HOME/.config/nixpkgs/wm/polybar"
 LAUNCH="polybar-msg cmd restart"
- 
+
 if  [[ $1 = "-amber" ]]; then
 # Replacing colors
 sed -i -e 's/bg = .*/bg = #FFFFFF/g' $PDIR/config.ini
