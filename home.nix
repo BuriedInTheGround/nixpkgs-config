@@ -15,6 +15,7 @@
     # Develop
     ./develop/git.nix
     ./develop/go.nix
+    ./develop/python.nix
 
     # GUI Tools
     ./gui-tools/gnome-packages.nix
