@@ -23,6 +23,16 @@
       :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
       :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
       :augroup END
+
+      " Dynamically toggle smartcase
+      " -> Off when in a : command line
+      " -> On  when in a / command line
+      :set ignorecase smartcase
+      :augroup dynamic_smartcase
+      :  autocmd!
+      :  autocmd CmdLineEnter * set nosmartcase
+      :  autocmd CmdLineLeave * set smartcase
+      :augroup END
     '';
     plugins = with pkgs.vimPlugins; [
       # Theming
@@ -46,5 +56,9 @@
         '';
       }
     ];
+  };
+
+  home.sessionVariables = {
+    EDITOR = "vim";
   };
 }
