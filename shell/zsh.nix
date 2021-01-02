@@ -21,6 +21,7 @@
 
     initExtra = ''
       eval "$(direnv hook zsh)"
+      test -r ~/.dir_colors && eval $(dircolors ~/.dir_colors)
       bindkey -e
     '';
 

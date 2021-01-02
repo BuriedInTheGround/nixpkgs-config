@@ -41,6 +41,7 @@
 
     # Shell
     ./shell/alacritty.nix
+    ./shell/dircolors.nix
     ./shell/zsh.nix
 
     # Shell Tools
