@@ -14,6 +14,30 @@ super + @space
 super + Escape
         pkill -USR1 -x sxhkd
 
+# audio play/pause
+@XF86AudioPlay
+        playerctl play-pause spotify
+
+# audio mute
+@XF86AudioMute
+        amixer set Master toggle
+
+# audio volume up
+XF86AudioRaiseVolume
+        amixer set Master 5%+
+
+# audio volume down
+XF86AudioLowerVolume
+        amixer set Master 5%-
+
+# calc
+XF86Calculator
+        gnome-calculator
+
+# screenshot (full screen)
+Print
+        gnome-screenshot
+
 #
 # polybar hotkeys
 #
