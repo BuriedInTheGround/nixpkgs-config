@@ -53,6 +53,7 @@
     ./tools/pastel.nix
     ./tools/sass.nix
     ./tools/stui.nix
+    ./tools/xclip.nix
     ./tools/xev.nix
     ./tools/ytdl.nix
     ./tools/zscroll.nix

@@ -11,6 +11,8 @@
     shellAliases = {
       ls = "ls --color=auto";
       ll = "ls -l";
+      pbcopy = "xclip -selection clipboard";
+      pbpaste = "xclip -selection clipboard -o";
     };
 
     history = {
