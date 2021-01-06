@@ -2,6 +2,7 @@
 
 {
   home.packages = [
-    pkgs.python
+    pkgs.python3Full
+    pkgs.python3Packages.pip
   ];
 }
