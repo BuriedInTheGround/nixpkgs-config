@@ -16,4 +16,6 @@ while true; do
             echo "" > ~/.auto-toggle-polybar
         fi
     fi
+
+    sleep 0.5
 done
