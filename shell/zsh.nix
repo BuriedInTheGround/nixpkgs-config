@@ -29,28 +29,29 @@
     '';
 
     initExtraBeforeCompInit = ''
+      ZSH_AUTOSUGGEST_MANUAL_REBIND=TRUE
       ZSH_AUTOSUGGEST_USE_ASYNC=TRUE
     '';
 
     oh-my-zsh = {
       enable = true;
       plugins = [
-        "battery"
-        "docker-compose"
-        "docker"
-        "fd"
-        "git"
-        "golang"
-        "history"
-        "httpie"
-        "man"
-        "ripgrep"
-        "safe-paste"
-        "systemd"
-        "themes"
-        "vscode"
+        # "battery"
+        # "docker-compose"
+        # "docker"
+        # "fd"
+        # "git"
+        # "golang"
+        # "history"
+        # "httpie"
+        # "man"
+        # "ripgrep"
+        # "safe-paste"
+        # "systemd"
+        # "themes"
+        # "vscode"
         "you-should-use"
-        "zsh-completions"
+        # "zsh-completions"
       ];
       theme = "robbyrussell";
     };
