@@ -15,6 +15,7 @@
     # Develop
     ./develop/git.nix
     ./develop/go.nix
+    ./develop/nodejs.nix
     ./develop/python.nix
 
     # GUI Tools
