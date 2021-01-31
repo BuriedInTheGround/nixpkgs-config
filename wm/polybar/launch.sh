@@ -22,3 +22,7 @@ fi
 
 # Update lockscreen wallpaper cache
 betterlockscreen -u ~/.config/polybar/scripts/lockwallpaper.png &
+
+# Run auto-toggle-polybar script for hiding the bar when in fullscreen node
+kill $(pgrep -f 'auto-toggle-polybar.sh')
+~/.config/polybar/scripts/auto-toggle-polybar.sh &
