@@ -6,6 +6,9 @@
 super + Return
         alacritty
 
+super + KP_Enter
+        alacritty
+
 # program launcher
 super + @space
         dmenu_run
@@ -33,6 +36,10 @@ XF86AudioLowerVolume
 # calc
 XF86Calculator
         gnome-calculator
+
+# brightness control
+{_,shift + ,super + }XF86MonBrightness{Down, Up}
+        brightnessctl set {1-,10-,1%,+1,+10,100%}
 
 # screenshot (full screen)
 Print
@@ -96,9 +103,9 @@ super + {p,b,comma,period}
 super + {_,shift + }c
         bspc node -f {next,prev}.local.!hidden.window
 
-# focus the next/previous desktop in the current monitor
-super + bracket{left,right}
-        bspc desktop -f {prev,next}.local
+# focus the next/previous desktop (current monitor or globally)
+super + bracket{left,right}{_, + shift}
+        bspc desktop -f {prev,next}{.local,_}
 
 # focus the last node/desktop
 super + {grave,Tab}
