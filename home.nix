@@ -45,14 +45,18 @@
     ./tools/bat.nix
     ./tools/bc.nix
     ./tools/cava.nix
+    ./tools/darkhttpd.nix
     ./tools/fd.nix
     ./tools/fzf.nix
     ./tools/htop.nix
     ./tools/httpie.nix
     ./tools/latex.nix
+    ./tools/mmv.nix
     ./tools/pastel.nix
     ./tools/sass.nix
     ./tools/stui.nix
+    ./tools/trashcli.nix
+    ./tools/tree.nix
     ./tools/xclip.nix
     ./tools/xev.nix
     ./tools/ytdl.nix
