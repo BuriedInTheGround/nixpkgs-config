@@ -53,10 +53,10 @@ MENU="$(rofi -no-lazy-grab -sep "|" -dmenu -i -p 'System :' \
 -color-urgent "$BACKGROUND,$YELLOW,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
 <<< "  Lock|  Logout|  Suspend|  Reboot|  Shutdown")"
 case "$MENU" in
-  *Lock) i3lock -t -e -f --color=161b22;;
+  *Lock) betterlockscreen --lock dimblur;;
   *Logout) loginctl terminate-session $XDG_SESSION_ID;;
-  *Suspend) i3lock -t -e -f --color=161b22 && systemctl suspend;;
-  *Reboot) systemctl reboot ;;
+  *Suspend) betterlockscreen --suspend dimblur;;
+  *Reboot) systemctl reboot;;
   *Shutdown) systemctl -i poweroff
 esac
 

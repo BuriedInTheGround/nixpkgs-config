@@ -5,7 +5,7 @@
 
   home.packages = [
     pkgs.dmenu
-    pkgs.i3lock
+    pkgs.betterlockscreen
     pkgs.networkmanager_dmenu
     pkgs.openbox
     pkgs.playerctl

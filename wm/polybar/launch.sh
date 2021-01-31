@@ -11,3 +11,6 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 # Launch main and secondary bar
 polybar -c ~/.config/polybar/config.ini main & disown
 polybar -c ~/.config/polybar/config.ini secondary & disown
+
+# Update lockscreen wallpaper cache
+betterlockscreen -u ~/.config/polybar/scripts/lockwallpaper.png &
