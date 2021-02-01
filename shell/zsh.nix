@@ -26,6 +26,8 @@
       eval "$(direnv hook zsh)"
       test -r ~/.dir_colors && eval $(dircolors ~/.dir_colors)
       bindkey -e
+
+      export GOPATH="$(go env | grep 'GOPATH' | cut -d '=' -f 2 | cut -d '"' -f 2)"
     '';
 
     initExtraBeforeCompInit = ''

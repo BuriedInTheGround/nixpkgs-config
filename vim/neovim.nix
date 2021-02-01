@@ -33,6 +33,21 @@
       :  autocmd CmdLineEnter * set nosmartcase
       :  autocmd CmdLineLeave * set smartcase
       :augroup END
+
+      " Some mappings
+      nnoremap ,<Space> :nohlsearch<CR>
+
+      " Avoid stupid typos
+      command! W :w
+      command! Q :q
+      command! WQ :wq
+      command! Wq :wq
+
+      set omnifunc=syntaxcomplete#Complete  " Http://vim.wikia.com/wiki/Omni_completion
+
+      " Use ctrl-space to autocomplete
+      inoremap <C-Space> <C-x><C-o>
+      inoremap <C-@> <C-Space>
     '';
     plugins = with pkgs.vimPlugins; [
       # Theming
@@ -41,10 +56,29 @@
       vim-airline-themes
 
       # Fuzzy Finder
-      fzf-vim
+      {
+        plugin = fzf-vim;
+        config = ''
+          nnoremap <C-p> :Files<CR>
+          nnoremap <C-g> :Rg<CR>
+        '';
+      }
 
       # Languages
       vim-nix
+      {
+        plugin = deoplete-nvim;
+        config = ''
+          let g:deoplete#enable_at_startup = 1
+        '';
+      }
+      {
+        plugin = deoplete-go;
+        config = ''
+          let g:deoplete#sources#go#gocode_binary = $GOPATH . '/bin/gocode'
+          let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+        '';
+      }
       {
         plugin = vim-go;
         config = ''
