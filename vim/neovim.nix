@@ -34,6 +34,9 @@
       :  autocmd CmdLineLeave * set smartcase
       :augroup END
 
+      " Treat all `*.svelte` files as HTML
+      au! BufNewFile,BufRead *.svelte set ft=html
+
       " Some mappings
       nnoremap ,<Space> :nohlsearch<CR>
 
@@ -63,6 +66,7 @@
           nnoremap <C-g> :Rg<CR>
         '';
       }
+      nerdtree
 
       # Languages
       vim-nix
