@@ -28,6 +28,7 @@
       bindkey -e
 
       export GOPATH="$(go env | grep 'GOPATH' | cut -d '=' -f 2 | cut -d '"' -f 2)"
+      export PATH=$PATH:$GOPATH/bin
     '';
 
     initExtraBeforeCompInit = ''

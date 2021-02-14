@@ -13,6 +13,9 @@
       st = "status -s";
       tree = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an> %Creset' --abbrev-commit";
     };
+    extraConfig = {
+      http.cookiefile = "~/.gitcookies";
+    };
   };
 
   home.packages = [
