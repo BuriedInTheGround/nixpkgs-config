@@ -1,7 +1,12 @@
 { config, pkgs, ... }:
 
+let
+
+  pkgsUnstable = import <nixos-unstable> {};
+
+in
 {
   home.packages = [
-    pkgs.age
+    pkgsUnstable.age
   ];
 }
