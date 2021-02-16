@@ -33,6 +33,7 @@
 
     # Security
     ./security/bitwarden.nix
+    ./security/keychain.nix
 
     # Shell
     ./shell/alacritty.nix
