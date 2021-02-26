@@ -2,8 +2,6 @@
 
 {
   home.packages = [
-    pkgs.tectonic
-    pkgs.raleway
-    pkgs.biber
+    pkgs.gnumake
   ];
 }
