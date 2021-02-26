@@ -15,6 +15,7 @@
     # Develop
     ./develop/git.nix
     ./develop/go.nix
+    ./develop/make.nix
     ./develop/nodejs.nix
     ./develop/python.nix
 
@@ -52,6 +53,7 @@
     ./tools/darkhttpd.nix
     ./tools/fd.nix
     ./tools/fzf.nix
+    ./tools/ghostscript.nix
     ./tools/htop.nix
     ./tools/httpie.nix
     ./tools/latex.nix
