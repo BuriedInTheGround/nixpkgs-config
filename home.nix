@@ -11,6 +11,7 @@
     # Crypto
     ./crypto/age.nix
     ./crypto/mkcert.nix
+    ./crypto/openssl.nix
 
     # Develop
     ./develop/git.nix
