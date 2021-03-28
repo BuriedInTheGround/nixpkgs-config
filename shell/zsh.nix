@@ -14,7 +14,8 @@
       pbcopy = "xclip -selection clipboard";
       pbpaste = "xclip -selection clipboard -o";
       tree = "tree -I node_modules";
-      gossh = "eval `keychain --eval --nogui --agents ssh id_rsa`";
+      gossh = "eval `keychain --eval --nogui --agents gpg,ssh id_rsa DFBFC992`";
+      copyhash = "git lg | head -n 1 | cut -d ' ' -f 1 | pbcopy";
     };
 
     history = {
