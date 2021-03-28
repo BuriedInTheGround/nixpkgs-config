@@ -16,8 +16,10 @@
     # Develop
     ./develop/git.nix
     ./develop/go.nix
+    ./develop/heroku.nix
     ./develop/make.nix
     ./develop/nodejs.nix
+    ./develop/postgresql.nix
     ./develop/python.nix
 
     # GUI Tools
