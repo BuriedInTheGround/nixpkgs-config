@@ -76,6 +76,7 @@
 
     # WM
     ./wm/bspwm.nix
+    ./wm/multilock.nix
     ./wm/polybar.nix
     ./wm/sxhkd.nix
   ];

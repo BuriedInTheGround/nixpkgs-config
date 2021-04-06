@@ -53,9 +53,9 @@ MENU="$(rofi -no-lazy-grab -sep "|" -dmenu -i -p 'System :' \
 -color-urgent "$BACKGROUND,$YELLOW,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
 <<< "  Lock|  Logout|  Suspend|  Reboot|  Shutdown")"
 case "$MENU" in
-  *Lock) betterlockscreen --lock dimblur;;
+  *Lock) multilockscreen --lock dim --display 1 --span;;
   *Logout) loginctl terminate-session $XDG_SESSION_ID;;
-  *Suspend) betterlockscreen --suspend dimblur;;
+  *Suspend) systemctl suspend;;
   *Reboot) systemctl reboot;;
   *Shutdown) systemctl -i poweroff
 esac

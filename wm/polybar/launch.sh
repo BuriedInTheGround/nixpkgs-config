@@ -21,7 +21,10 @@ else
 fi
 
 # Update lockscreen wallpaper cache
-betterlockscreen -u ~/.config/polybar/scripts/lockwallpaper.png &
+multilockscreen -u ~/.config/polybar/scripts/lockwallpaper.png --fx dim,color --display 1 --span &
+
+# Set the locker
+xss-lock -l -- multilockscreen --lock dim --display 1 --span &
 
 # Run auto-toggle-polybar script for hiding the bar when in fullscreen node
 kill $(pgrep -f 'auto-toggle-polybar.sh')

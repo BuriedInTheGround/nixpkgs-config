@@ -1,0 +1,27 @@
+# default options
+display_on=0
+span_image=false
+lock_timeout=300
+fx_list=(dim blur dimblur pixel dimpixel color)
+dim_level=40
+blur_level=1
+pixel_scale=10,1000
+solid_color=333333
+
+# default theme
+loginbox=00000066
+loginshadow=00000000
+locktext="> type password "  # `🔑` `🔒` `🔐`
+font="FiraCode Nerd Font"
+ringcolor=ffffffff
+insidecolor=00000000
+separatorcolor=00000000
+ringvercolor=ffffffff
+insidevercolor=00ff7fee  # springgreen
+ringwrongcolor=ffffffff
+insidewrongcolor=d23c3dff
+keyhlcolor=00fa9aff  # mediumspringgreen
+bshlcolor=d23c3dff
+verifcolor=ffffffff
+timecolor=e6e6faff  # lavender
+datecolor=e6e6faff  # lavender
