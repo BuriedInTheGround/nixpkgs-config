@@ -31,6 +31,7 @@
     ./gui-tools/spotify.nix
     ./gui-tools/themes.nix
     ./gui-tools/typora.nix
+    ./gui-tools/vscode.nix
     ./gui-tools/wine.nix
 
     # Office
