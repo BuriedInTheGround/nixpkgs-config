@@ -14,11 +14,13 @@
     ./crypto/openssl.nix
 
     # Develop
+    ./develop/gcc.nix
     ./develop/git.nix
     ./develop/go.nix
     ./develop/heroku.nix
     ./develop/make.nix
     ./develop/nodejs.nix
+    ./develop/php.nix
     ./develop/postgresql.nix
     ./develop/python.nix
 
