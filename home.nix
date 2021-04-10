@@ -62,9 +62,12 @@
     ./tools/ghostscript.nix
     ./tools/htop.nix
     ./tools/httpie.nix
+    ./tools/jmtpfs.nix
     ./tools/latex.nix
+    ./tools/mdp.nix
     ./tools/mmv.nix
     ./tools/pastel.nix
+    ./tools/pv.nix
     ./tools/sass.nix
     ./tools/stui.nix
     ./tools/trashcli.nix
