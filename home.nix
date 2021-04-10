@@ -34,6 +34,12 @@
     ./gui-tools/vscode.nix
     ./gui-tools/wine.nix
 
+    # Music
+    ./music/mpc.nix
+    ./music/mpd.nix
+    ./music/mpris.nix
+    ./music/ncmpcpp.nix
+
     # Office
     ./office/standardnotes.nix
     ./office/zoom.nix
