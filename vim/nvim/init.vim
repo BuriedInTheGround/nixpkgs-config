@@ -14,7 +14,7 @@ set termguicolors
 " Monokai Mode (Dark)
 function! ColorMonokai()
     syntax on
-    let g:airline_theme = ''
+    let g:airline_theme = 'molokai'
     let g:monokai_term_italic=1
     colorscheme monokai
 endfunction
