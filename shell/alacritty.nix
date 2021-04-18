@@ -94,4 +94,8 @@ in
       };
     };
   };
+
+  home.sessionVariables = {
+    COLORTERM = "truecolor";
+  };
 }
