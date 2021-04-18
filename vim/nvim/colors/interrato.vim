@@ -1,388 +1,185 @@
-" =============================================================================
-" File:        interrato.vim
-" Description: Vim color scheme file
-" Maintainer:  Simone Ragusa
-" =============================================================================
+" Project: Interrato Vim
+" Author: Simone Ragusa
+" License: MIT
+
+if version > 580
+    hi clear
+    if exists("syntax_on")
+        syntax reset
+    endif
+endif
+
+let g:colors_name = "interrato"
+let s:interrato_vim_version = "1.0.0-beta1"
 set background=light
-highlight clear
-if exists("syntax_on")
-  syntax reset
-endif
-let colors_name = "interrato"
-" =============================================================================
 
-" default scheme
+" Colors {{{
+" Dark Colors
+let s:interrato0_gui = "#000000"
+let s:interrato1_gui = "#1e1f1d"
+let s:interrato2_gui = "#353535"
+let s:interrato3_gui = "#4d4e4f"
+" Light Colors
+let s:interrato4_gui = "#dcdee6"
+let s:interrato5_gui = "#ecebe4"
+let s:interrato6_gui = "#f3f2ee"
+" Blue-ish Colors
+let s:interrato7_gui = "#253443"
+let s:interrato8_gui = "#007d9c"
+let s:interrato9_gui = "#00acd7"
+" Others
+let s:interrato10_gui = "#9c1f00"  " Red
+let s:interrato11_gui = "#d36916"  " Orange
+let s:interrato12_gui = "#d3b706"  " Yellow
+let s:interrato13_gui = "#499c00"  " Green
+let s:interrato14_gui = "#9c0049"  " Purple-ish
 
-hi Normal       guifg=#000000          guibg=#e0e0d8   gui=NONE
-hi CursorLine   guifg=NONE             guibg=#e1e1d0   gui=NONE
-hi CursorColumn guifg=NONE             guibg=#e1e1d0   gui=NONE
-hi LineNr       guifg=#a9a99e          guibg=NONE      gui=NONE
-hi CursorLineNr guifg=#005f87          guibg=NONE      gui=bold
-hi Constant     guifg=#353535          guibg=NONE      gui=bold
-hi Statement    guifg=#363636          guibg=NONE      gui=italic
-hi Function     guifg=fg               guibg=NONE      gui=bold
-hi String       guifg=#3c3c3c          guibg=NONE      gui=NONE
-hi Type         guifg=#616161          guibg=NONE      gui=bold,italic
-hi Conditional  guifg=#4d4d4d          guibg=NONE      gui=bold
-hi Todo         guifg=fg               guibg=NONE      gui=bold,underline
-hi Comment      guifg=#797979          guibg=NONE      gui=italic
-hi PmenuSel     guifg=fg               guibg=#a9a9aa   gui=bold
-hi ColorColumn  guifg=NONE             guibg=#e6e6e6
-hi Cursor       guifg=bg               guibg=fg        gui=NONE
-hi CursorIM     guifg=bg               guibg=fg        gui=NONE
-hi lCursor      guifg=bg               guibg=fg        gui=NONE
-hi DiffAdd      guifg=NONE             guibg=#d1d1d1   gui=NONE
-hi DiffChange   guifg=NONE             guibg=#9d9d9d   gui=NONE
-hi DiffDelete   guifg=NONE             guibg=#949494   gui=NONE
-hi DiffText     guifg=#000000          guibg=#bababa   gui=bold
-hi Directory    guifg=#525252          guibg=bg        gui=NONE
-hi ErrorMsg     guifg=#6f6f6f          guibg=NONE      gui=NONE
-hi FoldColumn   guifg=#555555          guibg=#cccbcb   gui=bold
-hi Folded       guifg=#555555          guibg=#cccccc   gui=italic
+" cterm
+let s:interrato0_term = "0"
+let s:interrato1_term = "0"
+let s:interrato2_term = "8"
+let s:interrato3_term = "8"
+let s:interrato4_term = "7"
+let s:interrato5_term = "7"
+let s:interrato6_term = "15"
+let s:interrato7_term = "1"
+let s:interrato8_term = "3"
+let s:interrato9_term = "11"
+let s:interrato10_term = "12"
+let s:interrato11_term = "6"
+let s:interrato12_term = "14"
+let s:interrato13_term = "10"
+let s:interrato14_term = "5"
 
-hi IncSearch    guifg=#000000          guibg=#adadad   gui=NONE
-hi Search       guifg=#000000          guibg=#c5c3c3   gui=NONE
-hi MatchParen   guifg=#000000          guibg=#a8a8a8   gui=bold
-hi ModeMsg      guifg=#ffffff          guibg=#767676   gui=bold
-hi MoreMsg      guifg=#7c7c7c          guibg=bg        gui=bold
-hi NonText      guifg=#7e7e7e          guibg=bg        gui=bold
-
-hi Pmenu        guifg=#646564          guibg=#b1b2b1   gui=reverse
-hi PmenuSbar    guifg=#ffffff          guibg=#989898   gui=NONE
-hi PmenuThumb   guifg=#ffffff          guibg=#777777   gui=NONE
-
-hi Question     guifg=#454545          guibg=bg        gui=bold
-hi SignColumn   guifg=#ffffff          guibg=#696969   gui=NONE
-
-hi SpecialKey   guifg=#ffffff          guibg=#696969    gui=NONE
-
-hi SpellBad     guisp=#323232          guibg=#d1cdcd   gui=undercurl
-hi SpellCap     guisp=#5d5d5d                          gui=undercurl
-hi SpellLocal   guisp=#434343                          gui=undercurl
-hi SpellRare    guisp=#7d7d7d                          gui=undercurl
-hi StatusLine   guifg=#e8e8e8          guibg=#858585   gui=bold
-hi StatusLineNC guifg=#808080          guibg=#bbbbbb   gui=italic
-hi TabLine      guifg=fg               guibg=#898a8b   gui=underline
-hi TabLineFill  guifg=fg               guibg=bg        gui=reverse
-hi TabLineSel   guifg=fg               guibg=bg        gui=bold
-hi Title        guifg=#6d6d6d          guibg=bg        gui=bold
-hi VertSplit    guifg=#b9b9b9          guibg=#b9b9b9
-hi Visual       guifg=#ffffff          guibg=#9a9a9a   gui=NONE
-hi WarningMsg   guifg=#cfcfcf          guibg=#5b5b5b   gui=NONE
-hi WildMenu     guifg=#000000          guibg=#c2c2c2   gui=NONE
-
-hi Boolean      guifg=#616060          guibg=NONE      gui=bold
-hi Identifier   guifg=#141414          guibg=NONE      gui=bold
-hi Keyword      guifg=#666666          guibg=NONE      gui=underline
-hi PreProc      guifg=#6b6b6b          guibg=NONE      gui=NONE
-hi Special      guifg=#6e6e6e          guibg=NONE      gui=NONE
-hi Ignore       guifg=bg               guibg=NONE      gui=NONE
-hi Error        guifg=#727272          guibg=NONE      gui=undercurl
-" -----------------------------------------------------------------------------
-hi VimError         guifg=#b6b6b6      guibg=#313131   gui=bold
-hi VimCommentTitle  guifg=#5c5c5c      guibg=bg        gui=bold,italic
-hi qfFileName       guifg=#6a6a6a      guibg=NONE      gui=italic
-hi qfLineNr         guifg=fg           guibg=NONE      gui=NONE
-hi qfError          guifg=fg           guibg=#c4c2c2   gui=undercurl
-
-" -----------------------------------------------------------------------------
-hi pythonDecorator  guifg=#3b3b3b      guibg=NONE      gui=bold
-hi link pythonDecoratorFunction pythonDecorator
-
-" -----------------------------------------------------------------------------
-hi htmlLink             guifg=#666666          guibg=NONE      gui=underline,italic
-
-if exists('g:interrato_colors') && g:interrato_colors==1
-    " light scheme with colors
-
-    hi Normal       guifg=#0b092c          guibg=#e5e5d8   gui=NONE
-    hi CursorLine   guifg=NONE             guibg=#d4d4c0   gui=NONE
-    hi CursorColumn guifg=NONE             guibg=#d4d4c0   gui=NONE
-    hi LineNr       guifg=#888875          guibg=NONE      gui=NONE
-    hi Constant     guifg=#73221A          guibg=NONE      gui=NONE
-    hi String       guifg=#073010          guibg=NONE      gui=NONE
-    hi Function     guifg=#3b1c5b          guibg=NONE      gui=bold
-    hi Statement    guifg=#100051          guibg=NONE      gui=italic
-    hi Conditional  guifg=#6e220e          guibg=NONE      gui=NONE
-    hi Type         guifg=#421b4d          guibg=NONE      gui=italic
-    hi Todo         guifg=#6c0303          guibg=NONE      gui=NONE
-    hi Comment      guifg=#6e6e6e          guibg=NONE      gui=italic
-    hi PmenuSel     guifg=fg               guibg=#c37a23   gui=bold
-    hi ColorColumn  guifg=NONE             guibg=#e6e6e6
-    hi Cursor       guifg=bg               guibg=fg        gui=NONE
-    hi CursorIM     guifg=bg               guibg=fg        gui=NONE
-    hi lCursor      guifg=bg               guibg=fg        gui=NONE
-
-    hi diffAdd      guifg=bg               guibg=#5a7e5d   gui=none
-    hi diffDelete   guifg=#bf6a6a          guibg=#3d2424   gui=none
-    hi diffChange   guifg=bg               guibg=#b55c5c   gui=none
-    hi diffText     guifg=bg               guibg=#264928   gui=none
-
-    hi Directory    guifg=#525252          guibg=bg        gui=NONE
-    hi ErrorMsg     guifg=#6f6f6f          guibg=NONE      gui=NONE
-    hi FoldColumn   guifg=#555555          guibg=#cccbcb   gui=bold
-    hi Folded       guifg=#555555          guibg=#cccccc   gui=italic
-
-    hi IncSearch    guifg=#000000          guibg=#adadad   gui=NONE
-    hi Search       guifg=#000000          guibg=#c5c3c3   gui=NONE
-    hi MatchParen   guifg=#000000          guibg=#a8a8a8   gui=bold
-    hi ModeMsg      guifg=#ffffff          guibg=#767676   gui=bold
-    hi MoreMsg      guifg=#7c7c7c          guibg=bg        gui=bold
-    hi NonText      guifg=#7e7e7e          guibg=bg        gui=bold
-
-    hi Pmenu        guifg=#646564          guibg=#b1b2b1   gui=reverse
-    hi PmenuSbar    guifg=#ffffff          guibg=#989898   gui=NONE
-    hi PmenuThumb   guifg=#ffffff          guibg=#777777   gui=NONE
-
-    hi Question     guifg=#454545          guibg=bg        gui=bold
-    hi SignColumn   guifg=#ffffff          guibg=#696969   gui=NONE
-
-    hi SpecialKey   guifg=#ffffff          guibg=#696969   gui=NONE
-
-    hi SpellBad     guisp=#323232          guibg=#d1cdcd   gui=undercurl
-    hi SpellCap     guisp=#5d5d5d                          gui=undercurl
-    hi SpellLocal   guisp=#434343                          gui=undercurl
-    hi SpellRare    guisp=#7d7d7d                          gui=undercurl
-    hi StatusLine   guifg=fg               guibg=#c0bebe   gui=bold
-    hi StatusLineNC guifg=#808080          guibg=#c5c5af   gui=italic
-    hi TabLine      guifg=fg               guibg=#898a8b   gui=underline
-    hi TabLineFill  guifg=fg               guibg=bg        gui=reverse
-    hi TabLineSel   guifg=fg               guibg=bg        gui=bold
-    hi Title        guifg=#6d6d6d          guibg=bg        gui=bold
-    hi VertSplit    guifg=#c5c5af          guibg=#c5c5af
-    hi Visual       guifg=#ffffff          guibg=#9a9a9a   gui=NONE
-    hi WarningMsg   guifg=#cfcfcf          guibg=#5b5b5b   gui=NONE
-    hi WildMenu     guifg=#000000          guibg=#c2c2c2   gui=NONE
-    hi Boolean      guifg=#616060          guibg=NONE      gui=bold
-    hi Identifier   guifg=#141414          guibg=NONE      gui=bold
-    hi Keyword      guifg=#666666          guibg=NONE      gui=underline
-    hi PreProc      guifg=#272c61          guibg=NONE      gui=NONE
-    hi Special      guifg=#6e6e6e          guibg=NONE      gui=NONE
-    hi Ignore       guifg=bg               guibg=NONE      gui=NONE
-    hi Error        guifg=#727272          guibg=NONE      gui=undercurl
-    " -----------------------------------------------------------------------------
-    hi VimError         guifg=#b6b6b6      guibg=#313131   gui=bold
-    hi VimCommentTitle  guifg=#5c5c5c      guibg=bg        gui=bold,italic
-    hi qfFileName       guifg=#6a6a6a      guibg=NONE      gui=italic
-    hi qfLineNr         guifg=fg           guibg=NONE      gui=NONE
-    hi qfError          guifg=fg           guibg=#c4c2c2   gui=undercurl
-
-    " -----------------------------------------------------------------------------
-    hi pythonDecorator  guifg=#3b3b3b      guibg=NONE      gui=bold
-    hi link pythonDecoratorFunction pythonDecorator
-    " -----------------------------------------------------------------------------
-    hi htmlLink             guifg=#666666          guibg=NONE      gui=underline,italic
-
-elseif exists('g:interrato_colors') && g:interrato_colors==2
-    " dark scheme without colors
-
-    set background=dark
-
-    hi Normal       guifg=#adadad          guibg=#1a1a1a   gui=NONE
-    hi CursorLine   guifg=NONE             guibg=#000000   gui=NONE
-    hi CursorColumn guifg=NONE             guibg=#000000   gui=NONE
-    hi LineNr       guifg=#555555          guibg=NONE      gui=NONE
-    hi Constant     guifg=#848484          guibg=NONE      gui=bold
-    hi Statement    guifg=#a6a6a6          guibg=NONE      gui=italic
-    hi Function     guifg=#919191          guibg=NONE      gui=bold
-    hi String       guifg=#838383          guibg=NONE      gui=italic
-    hi Type         guifg=#838383          guibg=NONE      gui=bold,italic
-    hi Conditional  guifg=#787878          guibg=NONE      gui=bold
-    hi Todo         guifg=#ffffff          guibg=NONE      gui=underline
-    hi Comment      guifg=#555555          guibg=NONE      gui=NONE
-    hi PmenuSel     guifg=#000000          guibg=#a9a9aa   gui=bold
-    hi Special      guifg=#868585          guibg=NONE      gui=NONE
-    hi Identifier   guifg=#626262          guibg=NONE      gui=bold
-    hi Keyword      guifg=#858585          guibg=NONE      gui=underline
-    hi PreProc      guifg=#6b6b6b          guibg=NONE      gui=italic
-
-
-    hi Visual       guifg=NONE             guibg=#313131   gui=NONE
-    hi ColorColumn  guifg=NONE             guibg=#e6e6e6
-    hi Cursor       guifg=bg               guibg=fg        gui=NONE
-    hi CursorIM     guifg=bg               guibg=fg        gui=NONE
-    hi lCursor      guifg=bg               guibg=fg        gui=NONE
-
-    hi DiffAdd      guifg=fg               guibg=#444444   gui=NONE
-    hi DiffChange   guifg=bg               guibg=#909090   gui=NONE
-    hi DiffDelete   guifg=NONE             guibg=#292929   gui=NONE
-    hi DiffText     guifg=NONE             guibg=#383838   gui=NONE
-
-    hi Directory    guifg=#525252          guibg=bg        gui=NONE
-    hi ErrorMsg     guifg=#6f6f6f          guibg=NONE      gui=NONE
-    hi FoldColumn   guifg=#555555           guibg=#414141   gui=bold
-    hi Folded       guifg=#828282           guibg=#212121   gui=italic
-
-    hi IncSearch    guifg=#000000          guibg=#adadad   gui=NONE
-    hi Search       guifg=#000000          guibg=#c5c3c3   gui=NONE
-    hi MatchParen   guifg=#000000          guibg=#a8a8a8   gui=bold
-    hi ModeMsg      guifg=#ffffff          guibg=#767676   gui=bold
-    hi MoreMsg      guifg=#7c7c7c          guibg=bg        gui=bold
-    hi NonText      guifg=#7e7e7e          guibg=bg        gui=bold
-
-    hi Pmenu        guifg=#656565          guibg=#3f3f3f   gui=NONE
-    hi PmenuSbar    guifg=fg               guibg=#5d5d5d   gui=NONE
-    hi PmenuThumb   guifg=fg               guibg=#777777   gui=NONE
-
-    hi Question     guifg=#454545          guibg=bg        gui=bold
-    hi SignColumn   guifg=#ffffff          guibg=#696969   gui=NONE
-
-    hi SpecialKey   guifg=#ffffff          guibg=#696969   gui=NONE
-
-    hi SpellBad     guisp=#ffffff          guibg=#000000   gui=undercurl
-    hi SpellCap     guisp=#5d5d5d                          gui=undercurl
-    hi SpellLocal   guisp=#434343                          gui=undercurl
-    hi SpellRare    guisp=#7d7d7d                          gui=undercurl
-    hi StatusLine   guifg=#000000          guibg=#727272   gui=bold
-    hi StatusLineNC guifg=#5a5959          guibg=#222222   gui=italic
-    hi TabLine      guifg=fg               guibg=#757575   gui=underline
-    hi TabLineFill  guifg=fg               guibg=bg        gui=reverse
-    hi TabLineSel   guifg=fg               guibg=bg        gui=bold
-    hi Title        guifg=#6d6d6d          guibg=bg        gui=bold
-    hi VertSplit    guifg=#222222          guibg=#222222
-    hi WarningMsg   guifg=#cfcfcf          guibg=#5b5b5b   gui=NONE
-    hi WildMenu     guifg=#000000          guibg=#828282   gui=NONE
-    hi Boolean      guifg=#616060          guibg=NONE      gui=bold
-    hi Ignore       guifg=bg               guibg=NONE      gui=NONE
-    hi Error        guifg=#727272          guibg=NONE      gui=undercurl
-    " -----------------------------------------------------------------------------
-    hi VimError         guifg=#b6b6b6      guibg=#313131   gui=bold
-    hi VimCommentTitle  guifg=#5c5c5c      guibg=bg        gui=bold,italic
-    hi qfFileName       guifg=#6a6a6a      guibg=NONE      gui=italic
-    hi qfLineNr         guifg=fg           guibg=NONE      gui=NONE
-    hi qfError          guifg=fg           guibg=#000000   gui=undercurl
-
-    " -----------------------------------------------------------------------------
-    hi pythonDecorator  guifg=#3b3b3b      guibg=NONE      gui=bold
-    hi link pythonDecoratorFunction pythonDecorator
-    " -----------------------------------------------------------------------------
-    hi htmlLink         guifg=#666666      guibg=NONE      gui=underline,italic
-
-elseif exists('g:interrato_colors') && g:interrato_colors==3
-    " dark scheme with colors
-
-    set background=dark
-
-    hi Normal       guifg=#adadad          guibg=#0f1216   gui=NONE
-    hi CursorLine   guifg=NONE             guibg=#000000   gui=NONE
-    hi CursorColumn guifg=NONE             guibg=#000000   gui=NONE
-    hi LineNr       guifg=#4d4d44          guibg=NONE      gui=NONE
-    hi Constant     guifg=#8d5c57          guibg=NONE      gui=NONE
-    hi String       guifg=#5d7a64          guibg=NONE      gui=NONE
-    hi Function     guifg=#9784a2          guibg=NONE      gui=NONE
-    hi Statement    guifg=#5a89a4          guibg=NONE      gui=italic
-    hi Conditional  guifg=#8c7867          guibg=NONE      gui=NONE
-    hi Type         guifg=#518991          guibg=NONE      gui=italic
-    hi Todo         guifg=#9b3535          guibg=NONE      gui=NONE
-    hi Comment      guifg=#777777          guibg=NONE      gui=NONE
-    hi PmenuSel     guifg=bg               guibg=#9b601a   gui=bold
-    hi Special      guifg=#a7a863          guibg=NONE      gui=NONE
-    hi Identifier   guifg=#a16f51          guibg=NONE      gui=NONE
-    hi Keyword      guifg=#737354          guibg=NONE      gui=underline
-    hi PreProc      guifg=#5567a1          guibg=NONE      gui=NONE
-    hi Visual       guifg=NONE             guibg=#462e44   gui=NONE
-    hi ColorColumn  guifg=NONE             guibg=#e6e6e6
-    hi Cursor       guifg=bg               guibg=fg        gui=NONE
-    hi CursorIM     guifg=bg               guibg=fg        gui=NONE
-    hi lCursor      guifg=bg               guibg=fg        gui=NONE
-    hi diffAdd      guifg=bg               guibg=#5a7e5d   gui=none
-    hi diffDelete   guifg=#bf6a6a          guibg=#2d1212   gui=none
-    hi diffChange   guifg=bg               guibg=#7e4444   gui=none
-    hi diffText     guifg=bg               guibg=#345535   gui=none
-
-
-    hi Directory    guifg=#525252          guibg=bg        gui=NONE
-    hi ErrorMsg     guifg=#6f6f6f          guibg=NONE      gui=NONE
-    hi FoldColumn   guifg=#555555          guibg=#414141   gui=bold
-    hi Folded       guifg=#828282          guibg=#212121   gui=italic
-
-    hi IncSearch    guifg=#000000          guibg=#adadad   gui=NONE
-    hi Search       guifg=#000000          guibg=#c5c3c3   gui=NONE
-    hi MatchParen   guifg=#000000          guibg=#a8a8a8   gui=bold
-    hi ModeMsg      guifg=#ffffff          guibg=#767676   gui=bold
-    hi MoreMsg      guifg=#7c7c7c          guibg=bg        gui=bold
-    hi NonText      guifg=#7e7e7e          guibg=bg        gui=bold
-
-    hi Pmenu        guifg=#656565          guibg=#3f3f3f   gui=NONE
-    hi PmenuSbar    guifg=fg               guibg=#5d5d5d   gui=NONE
-    hi PmenuThumb   guifg=fg               guibg=#777777   gui=NONE
-
-    hi Question     guifg=#454545          guibg=bg        gui=bold
-    hi SignColumn   guifg=#ffffff          guibg=#696969   gui=NONE
-
-    hi SpecialKey   guifg=#ffffff          guibg=#696969   gui=NONE
-
-    hi SpellBad     guisp=#ffffff          guibg=#000000   gui=undercurl
-    hi SpellCap     guisp=#5d5d5d                          gui=undercurl
-    hi SpellLocal   guisp=#434343                          gui=undercurl
-    hi SpellRare    guisp=#7d7d7d                          gui=undercurl
-    hi StatusLine   guifg=#000000          guibg=#727272   gui=bold
-    hi StatusLineNC guifg=#5a5959          guibg=#222222   gui=italic
-    hi TabLine      guifg=fg               guibg=#5f5f5f   gui=underline
-    hi TabLineFill  guifg=fg               guibg=bg        gui=reverse
-    hi TabLineSel   guifg=fg               guibg=bg        gui=bold
-    hi Title        guifg=#6d6d6d          guibg=bg        gui=bold
-    hi VertSplit    guifg=#222222          guibg=#222222
-    hi WarningMsg   guifg=#cfcfcf          guibg=#5b5b5b   gui=NONE
-    hi WildMenu     guifg=#000000          guibg=#828282   gui=NONE
-    hi Boolean      guifg=#616060          guibg=NONE      gui=bold
-    hi Ignore       guifg=bg               guibg=NONE      gui=NONE
-    hi Error        guifg=#727272          guibg=NONE      gui=undercurl
-    " -----------------------------------------------------------------------------
-    hi VimError         guifg=#b6b6b6      guibg=#313131   gui=bold
-    hi VimCommentTitle  guifg=#5c5c5c      guibg=bg        gui=bold,italic
-    hi qfFileName       guifg=#6a6a6a      guibg=NONE      gui=italic
-    hi qfLineNr         guifg=fg           guibg=NONE      gui=NONE
-    hi qfError          guifg=fg           guibg=#000000   gui=undercurl
-
-    " -----------------------------------------------------------------------------
-    hi pythonDecorator  guifg=#3b3b3b      guibg=NONE      gui=bold
-    hi link pythonDecoratorFunction pythonDecorator
-    " -----------------------------------------------------------------------------
-    hi htmlLink             guifg=#666666          guibg=NONE      gui=underline,italic
-
+" Vim 8 Terminal Colors
+if has('terminal')
+    let g:terminal_ansi_colors = [s:interrato1_gui, s:interrato10_gui, s:interrato13_gui, s:interrato12_gui, s:interrato7_gui, s:interrato14_gui, s:interrato8_gui, s:interrato5_gui, s:interrato3_gui, s:interrato10_gui, s:interrato13_gui, s:interrato12_gui, s:interrato7_gui, s:interrato14_gui, s:interrato9_gui, s:interrato6_gui]
 endif
 
-hi htmlTagName          guifg=NONE             guibg=NONE      gui=NONE
-hi link htmlScriptTag htmlTagName
-hi link htmlTagN htmlTagName
-hi link htmlEndTag htmlTagName
-hi link htmlSpecialTagName htmlTagName
+" Neovim Terminal Colors
+if has('nvim')
+    let g:terminal_color_0 = s:interrato1_gui
+    let g:terminal_color_1 = s:interrato10_gui
+    let g:terminal_color_2 = s:interrato13_gui
+    let g:terminal_color_3 = s:interrato12_gui
+    let g:terminal_color_4 = s:interrato7_gui
+    let g:terminal_color_5 = s:interrato14_gui
+    let g:terminal_color_6 = s:interrato8_gui
+    let g:terminal_color_7 = s:interrato5_gui
+    let g:terminal_color_8 = s:interrato3_gui
+    let g:terminal_color_9 = s:interrato10_gui
+    let g:terminal_color_10 = s:interrato13_gui
+    let g:terminal_color_11 = s:interrato12_gui
+    let g:terminal_color_12 = s:interrato7_gui
+    let g:terminal_color_13 = s:interrato14_gui
+    let g:terminal_color_14 = s:interrato9_gui
+    let g:terminal_color_15 = s:interrato6_gui
+endif
+" }}}
 
-hi link cssRenderAttr Constant
-hi link cssTextAttr Constant
-hi link cssUIAttr Constant
-hi link cssTableAttr Constant
-hi link cssColorAttr Constant
-hi link cssBoxAttr Constant
-hi link cssCommonAttr Constant
-hi link cssFunctionName Constant
-hi link cssRenderProp Type
-hi link cssBoxProp cssRenderProp
+" Highlighter Function {{{
+function! s:hi(group, guifg, guibg, ctermfg, ctermbg, attr)
+    if a:guifg != ""
+        exec "hi " . a:group . " guifg=" . a:guifg
+    endif
+    if a:guibg != ""
+        exec "hi " . a:group . " guibg=" . a:guibg
+    endif
+    if a:ctermfg != ""
+        exec "hi " . a:group . " ctermfg=" . a:ctermfg
+    endif
+    if a:ctermbg != ""
+        exec "hi " . a:group . " ctermbg=" . a:ctermbg
+    endif
+    if a:attr != ""
+        exec "hi " . a:group . " gui=" . a:attr
+    endif
+endfunction
+" }}}
 
-hi link cssTagName Statement
-hi link cssClassName cssTagName
-hi link cssIdentifier cssTagName
-hi link cssPseudoClass cssTagName
-hi link cssPseudoClassId cssTagName
+" UI Components : Editor {{{
+""" Base
+"          Group           GuiFG              GuiBG              CTermFG             CTermBG             Attr
+call s:hi("ColorColumn",  "",                s:interrato5_gui,  "NONE",             s:interrato5_term,  "")
+call s:hi("Cursor",       s:interrato6_gui,  s:interrato1_gui,  "",                 "NONE",             "")
+call s:hi("CursorLine",   "",                s:interrato5_gui,  "NONE",             s:interrato5_term,  "NONE")
+call s:hi("CursorColumn", "",                s:interrato5_gui,  "NONE",             s:interrato5_term,  "")
+call s:hi("Error",        s:interrato1_gui,  s:interrato10_gui, "",                 s:interrato10_term, "")
+call s:hi("iCursor",      s:interrato6_gui,  s:interrato1_gui,  "",                 "NONE",             "")
+call s:hi("LineNr",       s:interrato3_gui,  "NONE",            s:interrato3_term,  "NONE",             "")
+call s:hi("CursorLineNr", s:interrato0_gui,  "",                "NONE",             "",                 "NONE")
+call s:hi("MatchParen",   s:interrato7_gui,  s:interrato4_gui,  s:interrato7_term,  s:interrato4_term,  "")
+call s:hi("NonText",      s:interrato4_gui,  "",                s:interrato4_term,  "",                 "")
+call s:hi("Normal",       s:interrato1_gui,  s:interrato6_gui,  "NONE",             "NONE",             "")
+call s:hi("PMenu",        s:interrato1_gui,  s:interrato5_gui,  "NONE",             s:interrato1_term,  "NONE")
+call s:hi("PmenuSbar",    s:interrato1_gui,  s:interrato5_gui,  "NONE",             s:interrato1_term,  "")
+call s:hi("PMenuSel",     s:interrato8_gui,  s:interrato4_gui,  s:interrato8_term,  s:interrato4_term,  "")
+call s:hi("PmenuThumb",   s:interrato8_gui,  s:interrato4_gui,  "NONE",             s:interrato4_term,  "")
+call s:hi("SpecialKey",   s:interrato4_gui,  "",                s:interrato4_term,  "",                 "")
+call s:hi("SpellBad",     s:interrato10_gui, s:interrato6_gui,  s:interrato10_term, "NONE",             "underline")
+call s:hi("SpellCap",     s:interrato12_gui, s:interrato6_gui,  s:interrato12_term, "NONE",             "underline")
+call s:hi("SpellLocal",   s:interrato0_gui,  s:interrato6_gui,  s:interrato0_term,  "NONE",             "underline")
+call s:hi("SpellRare",    s:interrato2_gui,  s:interrato6_gui,  s:interrato2_term,  "NONE",             "underline")
+call s:hi("Visual",       "",                s:interrato9_gui,  "",                 s:interrato9_term,  "")
+call s:hi("VisualNOS",    "",                s:interrato9_gui,  "",                 s:interrato9_term,  "")
+call s:hi("VertSplit",    s:interrato4_gui,  s:interrato6_gui,  s:interrato4_term,  "NONE",             "NONE")
 
-hi cssBraces            guifg=fg            guibg=bg              gui=NONE
-hi javaScript           guifg=fg            guibg=NONE
-hi link javaScriptFunction Statement
-hi link javaScriptMember Statement
-hi link javaScriptValue Constant
+""" Neovim Support
+"          Group            GuiFG              GuiBG             CTermFG             CTermBG            Attr
+call s:hi("healthError",   s:interrato10_gui, s:interrato5_gui, s:interrato10_term, s:interrato5_term, "")
+call s:hi("healthSuccess", s:interrato13_gui, s:interrato5_gui, s:interrato13_term, s:interrato5_term, "")
+call s:hi("healthWarning", s:interrato12_gui, s:interrato5_gui, s:interrato12_term, s:interrato5_term, "")
+call s:hi("TermCursorNC",  "",                s:interrato5_gui, "",                 s:interrato5_term, "")
 
-hi link objcClass Type
-hi link cocoaClass objcClass
-hi link objcSubclass objcClass
-hi link objcSuperclass objcClass
-hi link cocoaFunction Function
-hi link objcMethodName Identifier
-hi link objcMethodArg Normal
-hi link objcMessageName Identifier
+""" Folding
+"          Group         GuiFG             GuiBG             CTermFG            CTermBG            Attr
+call s:hi("Folded",     s:interrato9_gui, s:interrato5_gui, s:interrato9_term, s:interrato5_term, "bold")
+call s:hi("FoldColumn", s:interrato9_gui, s:interrato4_gui, s:interrato9_term, "NONE",            "")
+call s:hi("SignColumn", s:interrato5_gui, s:interrato4_gui, s:interrato5_term, "NONE",            "")
+" }}}
 
-hi link javaType Statement
-hi link cppStatement  Statement
+" UI Components : Navigation {{{
+call s:hi("Directory", s:interrato8_gui, "", s:interrato8_term, "NONE", "")
+" }}}
 
+" Language Base Groups {{{
+"          Group             GuiFG              GuiBG   CTermFG             CTermBG Attr
+call s:hi("Boolean",        s:interrato7_gui,  "",     s:interrato7_term,  "",     "")
+call s:hi("Character",      s:interrato2_gui,  "",     s:interrato2_term,  "",     "")
+call s:hi("Comment",        s:interrato3_gui,  "",     s:interrato3_term,  "",     "")
+call s:hi("Conditional",    s:interrato7_gui,  "",     s:interrato7_term,  "",     "")
+call s:hi("Constant",       s:interrato1_gui,  "",     "NONE",             "",     "")
+call s:hi("Define",         s:interrato7_gui,  "",     s:interrato7_term,  "",     "")
+call s:hi("Delimiter",      s:interrato0_gui,  "",     s:interrato0_term,  "",     "")
+call s:hi("Exception",      s:interrato7_gui,  "",     s:interrato7_term,  "",     "")
+call s:hi("Float",          s:interrato0_gui,  "",     s:interrato0_term,  "",     "")
+call s:hi("Function",       s:interrato8_gui,  "",     s:interrato8_term,  "",     "")
+call s:hi("Identifier",     s:interrato1_gui,  "",     "NONE",             "",     "NONE")
+call s:hi("Include",        s:interrato7_gui,  "",     s:interrato7_term,  "",     "")
+call s:hi("Keyword",        s:interrato7_gui,  "",     s:interrato7_term,  "",     "")
+call s:hi("Label",          s:interrato7_gui,  "",     s:interrato7_term,  "",     "")
+call s:hi("Number",         s:interrato0_gui,  "",     s:interrato0_term,  "",     "")
+call s:hi("Operator",       s:interrato7_gui,  "",     s:interrato7_term,  "",     "NONE")
+call s:hi("PreProc",        s:interrato7_gui,  "",     s:interrato7_term,  "",     "NONE")
+call s:hi("Repeat",         s:interrato7_gui,  "",     s:interrato7_term,  "",     "")
+call s:hi("Special",        s:interrato1_gui,  "",     "NONE",             "",     "")
+call s:hi("SpecialChar",    s:interrato12_gui, "",     s:interrato12_term, "",     "")
+call s:hi("SpecialComment", s:interrato8_gui,  "",     s:interrato8_term,  "",     "")
+call s:hi("Statement",      s:interrato7_gui,  "",     s:interrato7_term,  "",     "")
+call s:hi("StorageClass",   s:interrato7_gui,  "",     s:interrato7_term,  "",     "")
+call s:hi("String",         s:interrato2_gui,  "",     s:interrato2_term,  "",     "")
+call s:hi("Structure",      s:interrato7_gui,  "",     s:interrato7_term,  "",     "")
+call s:hi("Tag",            s:interrato1_gui,  "",     "",                 "",     "")
+call s:hi("Todo",           s:interrato12_gui, "NONE", s:interrato12_term, "NONE", "")
+call s:hi("Type",           s:interrato7_gui,  "",     s:interrato7_term,  "",     "NONE")
+call s:hi("Typedef",        s:interrato7_gui,  "",     s:interrato7_term,  "",     "")
+hi! link Macro Define
+hi! link PreCondit PreProc
+" }}}
 
+" Go {{{
+call s:hi("goBuiltins", s:interrato8_gui, "", s:interrato8_term, "", "")
+hi! link goConstants Keyword
+" }}}
 
+" vim:foldmethod=marker:foldlevel=0

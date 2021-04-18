@@ -1,11 +1,10 @@
-"""
-""" Coloring
-"""
+" Colors {{{
 syntax on
 let g:airline_theme='nord'
 let g:nord_cursor_line_number_background=1
 let g:nord_italic=1
 let g:nord_italic_comments=1
+let $BAT_THEME = 'ansi-dark'
 colorscheme nord
 
 " Enable 24-bit RGB, Set Opaque Background
@@ -16,6 +15,7 @@ function! ColorMonokai()
     syntax on
     let g:airline_theme = 'molokai'
     let g:monokai_term_italic=1
+    let $BAT_THEME = 'Monokai Extended'
     colorscheme monokai
 endfunction
 
@@ -26,6 +26,7 @@ function! ColorNord()
     let g:nord_cursor_line_number_background=1
     let g:nord_italic=1
     let g:nord_italic_comments=1
+    let $BAT_THEME = 'ansi-dark'
     colorscheme nord
 endfunction
 
@@ -33,18 +34,29 @@ endfunction
 function! ColorInterrato()
     syntax off
     let g:airline_theme = 'papercolor'
+    let $BAT_THEME = 'GitHub'
     colorscheme interrato
 endfunction
 
+function! ChangeSyntaxHighlighting()
+    if exists("g:syntax_on")
+        syntax off
+    else
+        syntax on
+    endif
+endfunction
+" }}}
 
-"""
-""" Other Configurations
-"""
+" Other Configurations {{{
 set autowrite
 set tabstop=4 softtabstop=0 shiftwidth=4 expandtab smarttab
 set encoding=utf-8
 set splitright
 set omnifunc=syntaxcomplete#Complete  " Http://vim.wikia.com/wiki/Omni_completion
+" }}}
+
+" UI {{{
+set cursorline
 
 " Turn Hybrid Line Numbers ON
 set number relativenumber
@@ -63,12 +75,17 @@ augroup dynamic_smartcase
     autocmd CmdLineEnter * set nosmartcase
     autocmd CmdLineLeave * set smartcase
 augroup END
+" }}}
 
+" Section Folding {{{
+set foldenable
+set foldlevelstart=10
+set foldnestmax=10
+set foldmethod=syntax
+nnoremap <Space> za
+" }}}
 
-"""
-""" Plugin Configurations
-"""
-
+" Plugin Configurations {{{
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 
@@ -102,22 +119,24 @@ let g:fzf_colors =
             \ 'marker':  ['fg', 'Keyword'],
             \ 'spinner': ['fg', 'Label'],
             \ 'header':  ['fg', 'Comment'] }
+" }}}
 
-
-"""
-""" Filetype-Specific Configurations
-"""
-
+" Filetype-Specific {{{
 " Svelte (treat `*.svelte` files as HTML)
 au! BufNewFile,BufRead *.svelte set ft=html
 
+" Go (apply Interrato colorscheme)
+au! BufNewFile,BufRead *.go call ColorInterrato() | AirlineRefresh | doautocmd BufEnter
+" }}}
 
-"""
-""" Custom Mappings
-"""
+" Custom Mappings {{{
+" Change Theme
 nnoremap <leader>e1 :call ColorMonokai()<CR>
 nnoremap <leader>e2 :call ColorNord()<CR>
 nnoremap <leader>e3 :call ColorInterrato()<CR>
+
+" Turn Syntax ON/OFF
+nnoremap <leader>sh :call ChangeSyntaxHighlighting()<CR>
 
 " Clear Search Result Highlight
 nnoremap ,<Space> :nohlsearch<CR>
@@ -141,3 +160,6 @@ inoremap <C-@> <C-Space>
 " FZF
 nnoremap <C-p> :Files<CR>
 nnoremap <C-g> :Rg<CR>
+" }}}
+
+" vim:foldmethod=marker:foldlevel=0
