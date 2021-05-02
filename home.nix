@@ -33,6 +33,7 @@
     ./gui-tools/typora.nix
     ./gui-tools/vscode.nix
     ./gui-tools/wine.nix
+    ./gui-tools/zeal.nix
 
     # Music
     ./music/mpc.nix
