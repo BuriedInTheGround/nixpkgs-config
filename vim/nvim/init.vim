@@ -62,7 +62,14 @@ set autowrite
 set tabstop=4 softtabstop=0 shiftwidth=4 expandtab smarttab
 set encoding=utf-8
 set splitright
+set inccommand=nosplit
 set omnifunc=syntaxcomplete#Complete  " Http://vim.wikia.com/wiki/Omni_completion
+" }}}
+
+" Neovim Terminal {{{
+tmap <Space><Esc> <C-\><C-n>
+autocmd BufWinEnter,WinEnter term://* startinsert
+autocmd BufLeave term://* stopinsert
 " }}}
 
 " UI {{{
