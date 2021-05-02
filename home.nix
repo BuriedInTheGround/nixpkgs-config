@@ -62,10 +62,12 @@
     ./tools/bat.nix
     ./tools/bc.nix
     ./tools/cava.nix
+    ./tools/colordiff.nix
     ./tools/darkhttpd.nix
     ./tools/fd.nix
     ./tools/fzf.nix
     ./tools/ghostscript.nix
+    ./tools/hexedit.nix
     ./tools/htop.nix
     ./tools/httpie.nix
     ./tools/jmtpfs.nix
@@ -80,6 +82,7 @@
     ./tools/tree.nix
     ./tools/xclip.nix
     ./tools/xev.nix
+    ./tools/xxd.nix
     ./tools/ytdl.nix
     ./tools/zscroll.nix
 
