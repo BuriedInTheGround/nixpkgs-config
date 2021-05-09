@@ -79,6 +79,7 @@
     ./tools/mmv.nix
     ./tools/pastel.nix
     ./tools/pv.nix
+    ./tools/sage.nix
     ./tools/sass.nix
     ./tools/stui.nix
     ./tools/trashcli.nix
