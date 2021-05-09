@@ -96,6 +96,7 @@ in
   };
 
   home.sessionVariables = {
+    TERMINAL = "alacritty";
     COLORTERM = "truecolor";
   };
 }

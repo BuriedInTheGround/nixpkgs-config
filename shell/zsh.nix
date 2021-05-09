@@ -10,7 +10,7 @@
 
     shellAliases = {
       ls = "ls --color=auto";
-      ll = "ls -l";
+      ll = "nnn -de"; # "ls -l --si";
       pbcopy = "xclip -selection clipboard";
       pbpaste = "xclip -selection clipboard -o";
       tree = "tree -I node_modules";

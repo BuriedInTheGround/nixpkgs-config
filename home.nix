@@ -53,6 +53,7 @@
     # Shell
     ./shell/alacritty.nix
     ./shell/dircolors.nix
+    ./shell/nnn.nix
     ./shell/zsh.nix
 
     # Social
