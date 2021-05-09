@@ -42,6 +42,7 @@
     ./music/ncmpcpp.nix
 
     # Office
+    ./office/libreoffice.nix
     ./office/standardnotes.nix
     ./office/zoom.nix
 
@@ -66,14 +67,15 @@
     ./tools/colordiff.nix
     ./tools/darkhttpd.nix
     ./tools/fd.nix
+    ./tools/fontpreview.nix
     ./tools/fzf.nix
     ./tools/ghostscript.nix
+    ./tools/glow.nix
     ./tools/hexedit.nix
     ./tools/htop.nix
     ./tools/httpie.nix
     ./tools/jmtpfs.nix
     ./tools/latex.nix
-    ./tools/mdp.nix
     ./tools/mmv.nix
     ./tools/pastel.nix
     ./tools/pv.nix

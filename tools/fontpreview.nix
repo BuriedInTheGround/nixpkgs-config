@@ -2,6 +2,6 @@
 
 {
   home.packages = [
-    pkgs.mdp
+    pkgs.fontpreview
   ];
 }
