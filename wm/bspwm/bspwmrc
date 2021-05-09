@@ -8,7 +8,7 @@ pgrep -x unclutter > /dev/null || unclutter &
 
 pgrep -x picom > /dev/null || picom -f -D 3 &
 
-monitors=$(xrandr --listmonitors | grep 'Monitors: ' | cut -d ' ' -f 2)
+monitors=$(xrandr --listmonitors | rg 'Monitors: ' | cut -d ' ' -f 2)
 
 if [ $monitors -gt 1 ]; then
     xrandr --output DisplayPort-0 --auto --primary --output HDMI-0 --auto --left-of DisplayPort-0
