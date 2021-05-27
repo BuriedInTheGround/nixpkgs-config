@@ -143,7 +143,8 @@ let g:fzf_colors =
 au! BufNewFile,BufRead *.svelte set ft=html
 
 " Go (apply Interrato colorscheme)
-au! BufNewFile,BufRead *.go call ColorInterrato() | AirlineRefresh | doautocmd BufEnter
+au BufEnter *.go call ColorInterrato() | AirlineRefresh
+au BufWinLeave *.go call ColorNord() | AirlineRefresh
 " }}}
 
 " Custom Mappings {{{
