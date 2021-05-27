@@ -96,6 +96,7 @@
 
     # WM
     ./wm/bspwm.nix
+    ./wm/dmenu.nix
     ./wm/multilock.nix
     ./wm/polybar.nix
     ./wm/sxhkd.nix
