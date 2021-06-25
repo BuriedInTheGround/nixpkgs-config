@@ -3,5 +3,6 @@
 {
   home.packages = [
     pkgs.bitwarden
+    pkgs.bitwarden-cli
   ];
 }
