@@ -89,6 +89,7 @@
     ./tools/xev.nix
     ./tools/xxd.nix
     ./tools/ytdl.nix
+    ./tools/zbar.nix
     ./tools/zscroll.nix
 
     # Vim
