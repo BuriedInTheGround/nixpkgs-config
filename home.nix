@@ -102,6 +102,7 @@
     ./wm/multilock.nix
     ./wm/polybar.nix
     ./wm/sxhkd.nix
+    ./wm/xinitrc.nix
   ];
 
   # This value determines the Home Manager release that your
