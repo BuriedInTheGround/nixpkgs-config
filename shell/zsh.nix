@@ -101,6 +101,11 @@
       esac
     }
     zle -N zle-keymap-select
+    zle-line-init() {
+      zle -K viins
+      echo -ne '\e[6 q'
+    }
+    zle -N zle-line-init
     echo -ne '\e[6 q' # Use beam shape cursor at startup.
     preexec() { echo -ne '\e[6 q'; } # Use beam shape cursor for each new prompt.
     # }}}
@@ -109,6 +114,12 @@
       . ${pkgs.fzf}/share/fzf/completion.zsh
       . ${pkgs.fzf}/share/fzf/key-bindings.zsh
     fi
+
+    # Bindings.
+    bindkey -M viins '^[[A' up-line-or-beginning-search
+    bindkey -M vicmd '^[[A' up-line-or-beginning-search
+    bindkey -M viins '^[[B' down-line-or-beginning-search
+    bindkey -M vicmd '^[[B' down-line-or-beginning-search
 
     # Enable syntax highlighting.
     source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
