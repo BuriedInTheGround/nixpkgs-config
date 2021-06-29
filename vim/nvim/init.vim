@@ -136,12 +136,12 @@ let g:fzf_colors =
             \ 'marker':  ['fg', 'Keyword'],
             \ 'spinner': ['fg', 'Label'],
             \ 'header':  ['fg', 'Comment'] }
+" ale
+let g:ale_fixers = { 'javascript': ['eslint'] }
+let g:ale_fix_on_save = 1
 " }}}
 
 " Filetype-Specific {{{
-" Svelte (treat `*.svelte` files as HTML)
-au! BufNewFile,BufRead *.svelte set ft=html
-
 " Go (apply Interrato colorscheme)
 au BufEnter *.go call ColorInterrato() | AirlineRefresh
 au BufWinLeave *.go call ColorNord() | AirlineRefresh
