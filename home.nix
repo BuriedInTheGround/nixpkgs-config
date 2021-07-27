@@ -21,7 +21,6 @@
     ./develop/make.nix
     ./develop/nodejs.nix
     ./develop/php.nix
-    ./develop/postgresql.nix
     ./develop/python.nix
 
     # GUI Tools
@@ -60,6 +59,7 @@
     # Social
     ./social/discord.nix
     ./social/signal.nix
+    ./social/slack.nix
     ./social/telegram.nix
 
     # Tools
