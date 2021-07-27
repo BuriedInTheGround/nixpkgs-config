@@ -41,6 +41,9 @@ in
 
       # Linter
       ale
+
+      # File tree enhancement
+      vim-vinegar
     ];
   };
 
