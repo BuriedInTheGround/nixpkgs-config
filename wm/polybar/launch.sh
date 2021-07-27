@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/usr/bin/env bash
 
 # Terminate already running bar instances
 polybar-msg cmd quit
@@ -8,12 +8,12 @@ hwmon_path="/sys/devices/platform/coretemp.0/hwmon/$(ls /sys/devices/platform/co
 
 # Launch main and secondary bar...
 if [ "$(xrandr --listmonitors | rg 'Monitors: ' | cut -d ' ' -f 2)" -gt 1 ]; then
-    HWMON=$hwmon_path polybar --reload secondary -c ~/.config/polybar/config.ini & disown
+    HWMON=$hwmon_path polybar --reload secondary -c ~/.config/polybar/config & disown
     sleep 0.2
-    HWMON=$hwmon_path polybar --reload main -c ~/.config/polybar/config.ini & disown
+    HWMON=$hwmon_path polybar --reload main -c ~/.config/polybar/config & disown
 else
     # ...or laptop bar if there is only one monitor
-    MONITOR=$(polybar --list-monitors | cut -d ':' -f 1) HWMON=$hwmon_path polybar -c ~/.config/polybar/config.ini laptop & disown
+    MONITOR=$(polybar --list-monitors | cut -d ':' -f 1) HWMON=$hwmon_path polybar -c ~/.config/polybar/config laptop & disown
 fi
 
 # Update lockscreen wallpaper cache
@@ -23,5 +23,5 @@ fi
 xss-lock -l -- multilockscreen --lock dim --display 1 --span & disown
 
 # Run auto-toggle-polybar script for hiding the bar when in fullscreen node
-kill $(pgrep -u $UID -f 'auto-toggle-polybar.sh')
+kill "$(pgrep -u $UID -f 'auto-toggle-polybar.sh')"
 ~/.config/polybar/scripts/auto-toggle-polybar.sh & disown
