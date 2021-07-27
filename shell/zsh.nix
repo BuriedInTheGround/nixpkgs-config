@@ -60,6 +60,9 @@
     # Enable you-should-use.
     source ${pkgs.zsh-you-should-use}/share/zsh/plugins/you-should-use/you-should-use.plugin.zsh
 
+    # Enable Go plugin
+    source $HOME/.config/zsh-custom/plugins/golang/golang.plugin.zsh
+
     # History {{{
     HISTFILE=$HOME/.zsh_history
     HISTSIZE=1000
