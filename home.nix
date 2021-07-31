@@ -22,8 +22,10 @@
     ./develop/nodejs.nix
     ./develop/php.nix
     ./develop/python.nix
+    ./develop/redis.nix
 
     # GUI Tools
+    ./gui-tools/audacity.nix
     ./gui-tools/droidcam.nix
     ./gui-tools/gnome-packages.nix
     ./gui-tools/obs.nix
