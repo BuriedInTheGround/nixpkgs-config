@@ -63,7 +63,7 @@ modules-right = spotify spotify-prev spotify-play-pause spotify-next pulseaudio 
 inherit = bar/main
 
 [bar/secondary]
-monitor = HDMI-0
+monitor = HDMI-A-0
 modules-left = workspaces temperature
 modules-right = bluetooth date powermenu
 inherit = bar/main
