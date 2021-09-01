@@ -28,6 +28,7 @@
     ./gui-tools/audacity.nix
     ./gui-tools/droidcam.nix
     ./gui-tools/gnome-packages.nix
+    ./gui-tools/gpodder.nix
     ./gui-tools/obs.nix
     ./gui-tools/spotify.nix
     ./gui-tools/themes.nix
