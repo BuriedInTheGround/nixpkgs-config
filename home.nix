@@ -40,7 +40,7 @@
     # Music
     ./music/mpc.nix
     ./music/mpd.nix
-    ./music/mpris.nix
+    # [DISABLED] ./music/mpris.nix
     ./music/ncmpcpp.nix
 
     # Office
