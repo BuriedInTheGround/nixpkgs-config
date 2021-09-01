@@ -3,6 +3,7 @@
 let
 
   custom-polybar = pkgs.polybar.override {
+    mpdSupport = true;
     pulseSupport = true;
   };
 

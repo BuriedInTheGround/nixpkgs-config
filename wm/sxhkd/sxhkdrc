@@ -19,7 +19,7 @@ super + Escape
 
 # audio play/pause
 @XF86AudioPlay
-        playerctl play-pause spotify
+        playerctl play-pause -p spotify,%any
 
 # audio mute
 @XF86AudioMute
